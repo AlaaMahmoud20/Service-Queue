@@ -1,0 +1,17 @@
+# Visual Studio build outputs
+x64/
+Debug/
+Release/
+*.exe
+*.pdb
+*.ilk
+
+# Visual Studio local settings and hidden folders
+.vs/
+
+# Compiler/Build system specific files
+*.user
+*.aps
+*.suo
+*.db
+*.opendb
