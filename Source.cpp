@@ -13,10 +13,7 @@ int main()
 	Q1.IssueTicket();
 	Q1.IssueTicket();
 	Q1.IssueTicket();
-	Q1.PrintAllClientsTicket();
 	Q1.ServeNextClient();
-	cout<<"\nServed Client:"<<Q1.GetServedClientsCount()<<"\n";
-	cout<<"\nWating clients:"<<Q1.GetWaitingClientsCount() << "\n";
-	cout << "All tickets : " << Q1.GetTotalTicketsIssued() << "\n";
-	//cout << "hi";
+	Q1.PrintInfo();
+	Q1.PrintAllClientsTicket();
 }

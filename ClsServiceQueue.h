@@ -2,21 +2,21 @@
 #include <iostream>
 #include <queue>
 #include <string>
-#include "ClsTicket.h" // Make sure to include your Ticket blueprint
+#include "ClsTicket.h"
 
 using namespace std;
 
 class ClsServiceQueue
 {
 private:
-    string _Prefix;                 // Added: The manager must remember its own prefix (e.g., "VIP")
+    string _Prefix;                
     float _ServiceTime;
     int _TicketCounter;
     int _ServedClientsCount;
 
-    queue<ClsTicket> _QueueLine;    // Fixed: Tells C++ this queue specifically holds ClsTickets
+    queue<ClsTicket> _QueueLine;   
 
-    // Notice: We completely removed 'ClsTicket _Ticket;'
+  
 
     float _WatingTime()
     {
@@ -24,12 +24,12 @@ private:
     }
 
 public:
-    // The Constructor
+   
     ClsServiceQueue(string Prefix, float ServiceTime)
     {
         _Prefix = Prefix;
         _ServiceTime = ServiceTime;
-        _TicketCounter = 1;         // Always start the counter at 1 when a new queue opens
+        _TicketCounter = 1;        
         _ServedClientsCount = 0;
     }
 
@@ -37,7 +37,7 @@ public:
 
     float IssueTicket()
     {
-        ClsTicket Ticket(_Prefix, _TicketCounter);
+        ClsTicket Ticket(_Prefix, _TicketCounter,_QueueLine.size(), _WatingTime());
        float ExpectedWait = _WatingTime();
         _QueueLine.push(Ticket);
         _TicketCounter++;
@@ -47,7 +47,7 @@ public:
 
     ClsTicket ServeNextClient()
     {
-        if (_QueueLine.empty()) return ClsTicket{"",0};
+        if (_QueueLine.empty()) return ClsTicket{"",0,0,0};
         ClsTicket CurrentTicket = _QueueLine.front();
         _QueueLine.pop();
         _ServedClientsCount++;
@@ -74,14 +74,31 @@ public:
         if (totalClients == 0) return;
         for (int i = 0; i < totalClients; i++)
         {
-            // 1. Read the front ticket and tell it to print itself!
+         
             _QueueLine.front().PrintTicketDetails();
 
-            // 2. Rotate it safely to the back of the line
+            
             ClsTicket Temp = _QueueLine.front();
             _QueueLine.pop();
             _QueueLine.push(Temp);
         }
     }
+
+    void PrintInfo()
+    {
+        cout << "\n\tQueue Info";
+
+        cout << "\n\t-----------------------";
+        cout << "\n\tQueue Prefix   : " << _Prefix;
+
+
+        cout << "\n\tTotal Tickets  : " << GetTotalTicketsIssued();
+
+        cout << "\n\tServed Clients : " << _ServedClientsCount;
+
+        cout << "\n\tWaiting Clients : " << _QueueLine.size();
+        cout << "\n\t-----------------------\n";
+    }
+    
 
 };
