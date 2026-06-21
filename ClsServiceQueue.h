@@ -18,8 +18,9 @@ private:
 
   
 
-    float _WatingTime()
+    float _ExpectedWatingTime()
     {
+       
         return _QueueLine.size() * _ServiceTime;
     }
 
@@ -35,13 +36,11 @@ public:
 
    
 
-    float IssueTicket()
+    void IssueTicket()
     {
-        ClsTicket Ticket(_Prefix, _TicketCounter,_QueueLine.size(), _WatingTime());
-       float ExpectedWait = _WatingTime();
+        ClsTicket Ticket(_Prefix, _TicketCounter,_QueueLine.size(), _ExpectedWatingTime());
         _QueueLine.push(Ticket);
         _TicketCounter++;
-        return ExpectedWait;
 
     }
 
@@ -89,12 +88,12 @@ public:
         cout << "\n\tQueue Info";
 
         cout << "\n\t-----------------------";
-        cout << "\n\tQueue Prefix   : " << _Prefix;
-
-
-        cout << "\n\tTotal Tickets  : " << GetTotalTicketsIssued();
-
-        cout << "\n\tServed Clients : " << _ServedClientsCount;
+        cout << "\n\tQueue Prefix    : " << _Prefix;
+                                     
+                                     
+        cout << "\n\tTotal Tickets   : " << GetTotalTicketsIssued();
+                                     
+        cout << "\n\tServed Clients  : " << _ServedClientsCount;
 
         cout << "\n\tWaiting Clients : " << _QueueLine.size();
         cout << "\n\t-----------------------\n";

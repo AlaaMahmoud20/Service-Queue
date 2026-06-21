@@ -26,5 +26,17 @@
     <ClInclude Include="ClsServiceQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ClsDate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsMainScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsInputValidate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsPrintAllTickets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
