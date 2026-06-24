@@ -101,7 +101,8 @@ private:
 public :
 	static void ShowMainMenu(ClsServiceQueue& Queue)
 	{
-		
+		while (true)
+		{
 			_DrawMainMenu(Queue);
 			MainScreenOptions Choice = (MainScreenOptions)_GetChoice();
 
@@ -111,8 +112,9 @@ public :
 				cout << "\n\n\t\tClosing the system. Have a great day!\n\n";
 				return;
 			}
-		
+
 			_PerformOptions(Choice, Queue);
+		}
 	}
 
 };
