@@ -1,7 +1,7 @@
 #pragma once
 
 
-//#include <ctime>
+
 #include <string>
 #include "ClsDate.h"
 
@@ -56,27 +56,7 @@ public:
 		return _SequanceNumber;
 	}
 
-	//int GetWaitTime()
-	//{
-	//	time_t CurrentTime = time(0);
-	//	return (CurrentTime - _IssuedAt) / 60;
-	//}
 
-
-	
-	//string GetCreationDateTime()
-	//{
-	//	struct tm timeInfo;
-	//	localtime_s(&timeInfo, &_IssuedAt);
-
-	//	// One slightly larger buffer to hold both date and time comfortably
-	//	char dateTimeBuffer[100];
-
-	//	// Combine both formats in one shot: Day/Month/Year - Hour:Minute:Second
-	//	std::strftime(dateTimeBuffer, sizeof(dateTimeBuffer), "%d/%m/%Y - %H:%M:%S", &timeInfo);
-
-	//	return string(dateTimeBuffer);
-	//}
 
 	void PrintTicketDetails()
 	{

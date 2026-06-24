@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{ee96bef2-76fb-4c95-b62e-77b1897825af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screen">
+      <UniqueIdentifier>{53ff771b-522c-448b-b31d-567383c54059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Lib">
+      <UniqueIdentifier>{9273af0b-8585-4a05-b9e2-198dc9cc68a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -21,22 +30,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClsTicket.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="ClsServiceQueue.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="ClsDate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClsMainScreen.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lib</Filter>
     </ClInclude>
     <ClInclude Include="ClsInputValidate.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsMainScreen.h">
+      <Filter>Header Files\Screen</Filter>
     </ClInclude>
     <ClInclude Include="ClsPrintAllTickets.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsScreen.h">
+      <Filter>Header Files\Screen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -12,12 +12,13 @@ private:
 	{ 
 		eIsueNewTicket = 1,
 		eServeNextClient = 2,
-		ePrintAllTickets = 3
+		ePrintAllTickets = 3,
+		eExit = 4
 
 	};
 	static short _GetChoice()
 	{
-		short Choice = clsInputValidate::ReadNumberBetween<short>(1, 3);
+		short Choice = clsInputValidate::ReadNumberBetween<short>(1, 4);
 		return Choice;
 	}
 	static void _BackToMainScreen(ClsServiceQueue& Queue)
@@ -44,10 +45,12 @@ private:
 		cout << "\n\t===================================";
 		cout << "\n\t  [1] Issue New Ticket";
 		cout << "\n\t  [2] Serve Next Client";
-		cout << "\n\t  [3] Print All Tickets";
+		cout << "\n\t  [3] Print All Waiting Tickets";
+		cout << "\n\t  [4] Exit Program";
+	
 		
 		cout << "\n\t===================================";
-		cout << "\n\tPlease enter your choice [1-1]: ";
+		cout << "\n\tPlease enter your choice [1-4]: ";
 	}
 	static void _PerformIssueTicketOption(ClsServiceQueue&Queue)
 	{
@@ -98,13 +101,18 @@ private:
 public :
 	static void ShowMainMenu(ClsServiceQueue& Queue)
 	{
-		while (true)
-		{
-
+		
 			_DrawMainMenu(Queue);
-			_PerformOptions((MainScreenOptions)_GetChoice(), Queue);
+			MainScreenOptions Choice = (MainScreenOptions)_GetChoice();
 
-		}
+			if (Choice == MainScreenOptions::eExit)
+			{
+				system("cls");
+				cout << "\n\n\t\tClosing the system. Have a great day!\n\n";
+				return;
+			}
+		
+			_PerformOptions(Choice, Queue);
 	}
 
 };
